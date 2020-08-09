@@ -1,4 +1,4 @@
-package net.cishow.fsjcp.common.entity.fsconf;
+package net.cishow.fsjcp.common.entity.fsconf.base;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

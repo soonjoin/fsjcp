@@ -1,8 +1,8 @@
-package net.cishow.fsjcp.common.entity.fsconf;
+package net.cishow.fsjcp.common.entity.fsconf.base;
 
 import java.util.HashMap;
 
-public class MapItem extends HashMap<String, String> {
+public class MapItem<T> extends HashMap<String, T> {
 
     private final String tag;
     private final String keyName;
