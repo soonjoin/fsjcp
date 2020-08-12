@@ -1,8 +1,8 @@
 package net.cishow.fsjcp.service;
 
 import net.cishow.fsjcp.common.entity.fsconf.Sofia;
-import net.cishow.fsjcp.common.entity.fsconf.base.Gateway;
 import net.cishow.fsjcp.common.entity.fsconf.base.SipProfile;
+import net.cishow.fsjcp.common.entity.fsconf.base.SipProfileType;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -14,16 +14,8 @@ class FsjcpServiceApplicationTests {
 
         Sofia sofia = new Sofia();
 
-        sofia.getGlobal_settings().put("a",null);
-        sofia.getGlobal_settings().put("b","y");
-
-        SipProfile sipProfile1 = new SipProfile("internal");
-        //SipProfile sipProfile2 = new SipProfile("external");
-        Gateway gateway = new Gateway("test");
-        gateway.put("expire-seconds", "60");
-        sipProfile1.getGateways().put("test", gateway);
-        sofia.getProfiles().put("internal", sipProfile1);
-        //sofia.getProfiles().put("external", sipProfile2);
+        SipProfile external = new SipProfile("external", SipProfileType.EXTERNAL);
+        sofia.getProfiles().put("external", external);
 
         System.out.println(sofia);
     }
