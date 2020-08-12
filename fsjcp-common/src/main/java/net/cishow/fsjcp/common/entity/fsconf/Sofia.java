@@ -4,13 +4,14 @@ import lombok.Getter;
 import lombok.Setter;
 import net.cishow.fsjcp.common.entity.fsconf.base.ContainerItem;
 import net.cishow.fsjcp.common.entity.fsconf.base.MapItem;
+import net.cishow.fsjcp.common.entity.fsconf.base.SipProfile;
 
 @Getter
 @Setter
 public class Sofia extends ContainerItem {
 
     private MapItem<String> global_settings;
-    private MapItem<String> profiles;
+    private MapItem<SipProfile> profiles;
 
     public Sofia() {
         super("configuration", "name=\"sofia.conf\" description=\"sofia Endpoint\"");

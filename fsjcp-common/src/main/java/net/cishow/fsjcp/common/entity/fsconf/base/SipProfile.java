@@ -1,4 +1,22 @@
 package net.cishow.fsjcp.common.entity.fsconf.base;
 
-public class SipProfile {
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class SipProfile extends ContainerItem {
+
+    private MapItem<String> aliases;
+    private MapItem<Gateway> gateways;
+    private MapItem<String> domains;
+    private MapItem<String> settings;
+
+    public SipProfile(String name) {
+        super("profile", "name=" + name);
+        aliases = new MapItem<>("aliases");
+        gateways = new MapItem<>("gateways");
+        domains = new MapItem<>("domains");
+        settings = new MapItem<>("settings");
+    }
 }
