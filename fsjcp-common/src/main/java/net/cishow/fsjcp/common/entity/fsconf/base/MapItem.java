@@ -24,7 +24,13 @@ public class MapItem<T> extends HashMap<String, T> {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         forEach((k,v)-> {
-            sb.append("<").append(tag).append(" ").append(keyName).append("=\"").append(k).append("\" ").append(valueName).append("=\"").append(v).append("\"/>\n");
+            if (v == null) {
+                sb.append("<").append(tag).append(" ").append(keyName).append("=\"").append(k).append("\"/>\n");
+            }else if (v instanceof String) {
+                sb.append("<").append(tag).append(" ").append(keyName).append("=\"").append(k).append("\" ").append(valueName).append("=\"").append(v).append("\"/>\n");
+            } else {
+                sb.append(v.toString());
+            }
         });
         return sb.toString();
     }
