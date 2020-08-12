@@ -9,7 +9,7 @@ public class SipProfile extends ContainerItem {
 
     private MapItem<String> aliases;
     private MapItem<Gateway> gateways;
-    private MapItem<String> domains;
+    private MapItem<Domain> domains;
     private MapItem<String> settings;
 
     public SipProfile(String name) {
@@ -18,5 +18,7 @@ public class SipProfile extends ContainerItem {
         gateways = new MapItem<>("gateways");
         domains = new MapItem<>("domains");
         settings = new MapItem<>("settings");
+
+        domains.put("all", new Domain("all", "true", "false"));
     }
 }

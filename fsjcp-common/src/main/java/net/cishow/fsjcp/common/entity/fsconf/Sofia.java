@@ -17,6 +17,10 @@ public class Sofia extends ContainerItem {
         super("configuration", "name=\"sofia.conf\" description=\"sofia Endpoint\"");
         this.global_settings = new MapItem<>("global_settings");
         this.profiles = new MapItem<>("profiles");
+
+        // set default value
+        global_settings.put("log-level", "0");
+        global_settings.put("debug-presence", "0");
     }
 
 }
