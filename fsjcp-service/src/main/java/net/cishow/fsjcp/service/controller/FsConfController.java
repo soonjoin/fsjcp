@@ -22,6 +22,9 @@ public class FsConfController {
         SipProfile external = new SipProfile("external", SipProfileType.EXTERNAL);
         sofia.getProfiles().put("external", external);
 
+        SipProfile internal = new SipProfile("internal", SipProfileType.INTERNAL);
+        sofia.getProfiles().put("internal", internal);
+
         return sofia.toString();
     }
 
