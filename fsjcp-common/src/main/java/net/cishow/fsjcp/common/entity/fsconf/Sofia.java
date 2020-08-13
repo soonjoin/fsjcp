@@ -23,4 +23,12 @@ public class Sofia extends ContainerItem {
         global_settings.put("debug-presence", "0");
     }
 
+    @Override
+    public String toString() {
+        return "<document type=\"freeswitch/xml\">\n"
+                + "<section name=\"configuration\">\n"
+                + super.toString()
+                + "</section>\n"
+                + "</document>\n";
+    }
 }
